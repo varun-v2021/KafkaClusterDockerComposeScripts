@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  producer:
+    image: vanarudocker/kafka-producer
+    environment:
+      - BROKER=kafka1:19091
+  consumer:
+    image: vanarudocker/kafka-consumer
+    environment:
+      - BROKER=kafka2:19092
+      - MESSAGE_PROCESSING_TIME=2000
